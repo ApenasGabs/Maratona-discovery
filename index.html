@@ -9,24 +9,28 @@
 
 <body>
     <header>
-        <h1>Minha grana</h1>
+        <h1 id="logo">Minha grana</h1>
     </header>
     <main>
-        <section>
+        <section id="balance">
             <h2>Balanço</h2>
-            <h3>Entradas</h3>
-            <p>R$2,90</p>
-            <h3>Saidas</h3>
-            <p>R$2,90</p>
-
-            <h3>Total</h3>
-            <p>R$0</p>
+            <div class="card">
+                <h3>Entradas</h3>
+                <p>R$2,90</p>
+            </div>
+            <div class="card">
+                <h3>Saidas</h3>
+                <p>R$2,90</p>
+            </div>
+            <div class="card">
+                <h3>Total</h3>
+                <p>R$0</p>
+            </div>
         </section>
-        <section>
+        <section id="transactions">
             <h2>Transações</h2>
         </section>
-
-        <table>
+        <table id="data-table">
             <thead>
                 <tr>
                     <th>Descrição</th>
@@ -39,11 +43,13 @@
                     <td>Luz</td>
                     <td>R$500</td>
                     <td>23/05/2022</td>
-
+                </tr>
+                <tr>
                     <td>aluguel</td>
                     <td>R$800</td>
                     <td>23/05/2022</td>
-
+                </tr>
+                <tr>
                     <td>celular</td>
                     <td>R$120</td>
                     <td>23/05/2022</td>
@@ -52,10 +58,10 @@
         </table>
     </main>
     <footer>
-
+        <p>
+            Made with ❤️ by <a href="https://github.com/Apenasgabs">Apenasgabs</a>
+        </p>
     </footer>
-
-
 </body>
 
 </html>
