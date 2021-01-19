@@ -68,8 +68,43 @@ header{
     color: white;
 }
 #data-table{
+    width: 100%;
+    border-spacing: 0 0 .5rem;
+    color: #8993b9;
+}
+table thead tr th:first-child,
+table tbody tr td:first-child{
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+table tbody tr:hover {
+    opacity: 1;
+}
+table tbody tr {
+    opacity: .7;
+}
+table tbody td {
+    background: white;
+    padding: 1rem 2rem ;
     
 }
+
+table thead th {
+    background: white;
+    font-weight: normal;
+    padding: 1rem 2rem;
+    text-align: left;
+    
+}
+td.description{
+    color: var(--colordark-blue);
+}
+td.income{
+    color: #49aa26;
+}
+td.expense{
+    color: rgb(230, 23, 23);
+}
 footer{
+    margin: 1rem;
     text-align: center;
 }
