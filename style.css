@@ -17,6 +17,19 @@ body {
     width: min(92vw, 800px);
     margin: auto;
 }
+a:hover {
+    color: #3dd705;
+
+}
+a {
+    color: #49aa26;
+    text-decoration: none;
+}
+.button.new {
+    display: inline-block;
+    margin-bottom: .8rem;
+
+}
 
 h2 {
     margin-top: 3.2rem;
@@ -46,7 +59,9 @@ header{
 .card h3{
     font-size: 1rem;
     font-weight: normal;
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
 }
 .card p{
@@ -76,6 +91,11 @@ table thead tr th:first-child,
 table tbody tr td:first-child{
     border-radius: 0.25rem 0 0 0.25rem;
 }
+
+table thead tr th:last-child,
+table tbody tr td:last-child{
+    border-radius: 0 0.25rem 0.25rem 0 ;
+}
 table tbody tr:hover {
     opacity: 1;
 }
@@ -95,6 +115,19 @@ table thead th {
     text-align: left;
     
 }
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0,);
+    white-space: nowrap;
+    border-width: 0;
+
+}
+
 td.description{
     color: var(--colordark-blue);
 }
