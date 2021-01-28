@@ -8,7 +8,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html{
+    font-size: 93.75%;
+}
 body {
     background: #f0f2f5;
     font-family: 'Poppins', sans-serif;
@@ -140,4 +142,15 @@ td.expense{
 footer{
     margin: 1rem;
     text-align: center;
+}
+@media (min-width:800px){
+    html {
+        font-size: 87.5%;
+    }
+
+    #balance{
+        display: grid;
+
+    }
+
 }
