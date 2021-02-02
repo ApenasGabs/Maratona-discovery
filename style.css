@@ -84,10 +84,17 @@ header{
     background: #49aa26;
     color: white;
 }
+
+#transactions{
+    display: block;
+    width: 100%;
+    overflow-x:auto;
+}
 #data-table{
     width: 100%;
     border-spacing: 0 0 .5rem;
     color: #8993b9;
+    
 }
 table thead tr th:first-child,
 table tbody tr td:first-child{
@@ -139,6 +146,56 @@ td.income{
 td.expense{
     color: rgb(230, 23, 23);
 }
+.modal-overlay{
+    width: 100%;
+    height:  100%;
+    background-color: rgba(0,0,0, 0.7);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+
+}
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+.modal{
+    background: #f0f2f5;
+    padding: 2.4rem;
+    position: relative;
+}
+
+#form{
+    max-width: 500px;
+}
+#form h2{
+    margin-top: 0;
+}
+input{
+    border: none;
+    border-radius: .25rem;
+    padding: 0.8rem;
+}
+.input-group{
+    margin-top: 0.8;
+}
+.input-group small{
+    opacity: 0.4;
+}
+.input-group.actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input-group.actions .button,
+.input-group.actions button{
+    width: 48%;
+}
+
 footer{
     margin: 1rem;
     text-align: center;
@@ -150,6 +207,8 @@ footer{
 
     #balance{
         display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
 
     }
 
