@@ -1,5 +1,8 @@
 :root{
     --colordark-blue: #363f5f;
+    --green: #49aa49;
+    --light-green: #3dd705 ;
+    --red:#e92929;
 }
 
 
@@ -20,19 +23,50 @@ body {
     margin: auto;
 }
 a:hover {
-    color: #3dd705;
+    color:var(--light-green);
 
 }
 a {
-    color: #49aa26;
+    color:var(--green);
     text-decoration: none;
+}
+
+button{
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: white;
+    background: var(--green);
+    padding: 0;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+button:hover{
+    background: var(--light-green);
 }
 .button.new {
     display: inline-block;
     margin-bottom: .8rem;
 
 }
+.button.cancel{
+    color:var(--red) ;
+    border: 2px var(--red) solid ;
+    border-radius: 0.25rem;
 
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0.6;
+}
+
+.button.cancel:hover{
+    opacity: 1;
+}
 h2 {
     margin-top: 3.2rem;
     margin-bottom: 0.8rem;
@@ -81,7 +115,7 @@ header{
 
 }
 .card.total{
-    background: #49aa26;
+    background: var(--green);
     color: white;
 }
 
@@ -141,7 +175,7 @@ td.description{
     color: var(--colordark-blue);
 }
 td.income{
-    color: #49aa26;
+    color: var(--green);
 }
 td.expense{
     color: rgb(230, 23, 23);
