@@ -28,8 +28,12 @@ const transactions = [
         amount: -10000,
         date: '23/01/2021'
     },
-
-
+    {
+        id: 4,
+        description: 'Concerto de pc',
+        amount: 50000,
+        date: '23/01/2021'
+    },
 ]
 
 const Transaction = {
@@ -45,16 +49,25 @@ const Transaction = {
 }
 
 const DOM = {
-        addTransaction(transaction, index){
-            console.log(transaction)
-const tr = document.createElement('tr')
-tr.innerHTML = DOM.innerHTMLTransaction()
+    transactionsContainer: document.querySelector('#data-table tbody'),
+
+    addTransaction(transaction, index) {
+
+        const tr = document.createElement('tr')
+        tr.innerHTML = DOM.innerHTMLTransaction(transaction)
+
+        DOM.transactionsContainer.appendChild(tr)
+
     },
-    innerHTMLTransaction() {
+    innerHTMLTransaction(transaction) {
+        const CSSclass = transaction.amount > 0 ? "income" : "expense"
+        
+        const amount = Utils.formatCurrency(transaction.amount)
+        
         const html = `
-        <td class="description">Luz</td>
-        <td class="expense">R$500</td>
-        <td class="date">23/05/2022</td>
+        <td class="description">${transaction.description}</td>
+        <td class="${CSSclass}">${amount}</td>
+        <td class="date">${transaction.date}</td>
         <td>
             <img src="/assets/minus.svg" alt="Remover Transações">
         </td>
@@ -63,4 +76,21 @@ tr.innerHTML = DOM.innerHTMLTransaction()
     }
 }
 
-DOM.addTransaction(transactions[2])
+const Utils = {
+    formatCurrency(value){
+        const signal = Number(value) < 0 ? "-" : ""
+        
+        value = String(value).replace(/\D/g, "")
+        value = Number(value) / 100
+        value = value.toLocaleString("pt-br",{
+            style: "currency",
+            currency: "BRL"
+
+        })
+        return signal + value
+    }
+}
+
+transactions.forEach(function (transaction) {
+    DOM.addTransaction(transaction)
+})
